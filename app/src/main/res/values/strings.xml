@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Glasses Builder</string>
+    <string-array name="frame_material">
+        <item>Metal</item>
+        <item>Plastic</item>
+        <item>Nylon</item>
+        <item>Titanium</item>
+        <item>Stainless Steel</item>
+        <item>Beryllium</item>
+    </string-array>
+
+</resources>
