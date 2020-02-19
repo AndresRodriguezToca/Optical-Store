@@ -12,10 +12,13 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.CheckBox;
 import android.widget.Toast;
+import java.text.DecimalFormat;
 
 import java.util.Random;
 
 public class Main3Activity extends AppCompatActivity {
+
+    private static DecimalFormat df2 = new DecimalFormat("#.##");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +41,7 @@ public class Main3Activity extends AppCompatActivity {
 
         //calculate price of glasses frame plus shipping
         double totalPrice;
-        double shipPrice = 24.9;
+        double shipPrice = 24.99;
         totalPrice = basePrice + shipPrice;
 
         //receipt textView
@@ -48,47 +51,47 @@ public class Main3Activity extends AppCompatActivity {
         TextView receipt = findViewById(R.id.textView3);
         String cartContents;
         if (imageSelected.contains("ImageBlack"))
-            cartContents = "Black Frame Base:\t\t\t\t\t\t\t\t\t\t\t$" + basePrice + "\n\n";
+            cartContents = "Black Frame Base:\t\t\t\t\t\t\t\t\t\t\t$" + df2.format(basePrice) + "\n\n";
         else if (imageSelected.contains("ImageBrown")){
-            cartContents = "Brown Frame Base:\t\t\t\t\t\t\t\t\t\t$" + basePrice + "\n\n";
+            cartContents = "Brown Frame Base:\t\t\t\t\t\t\t\t\t\t$" + df2.format(basePrice) + "\n\n";
         } else if (imageSelected.contains("ImageRed")){
-            cartContents = "Red Frame Base:\t\t\t\t\t\t\t\t\t\t\t\t$" + basePrice + "\n\n";
+            cartContents = "Red Frame Base:\t\t\t\t\t\t\t\t\t\t\t\t$" + df2.format(basePrice) + "\n\n";
         } else {
             cartContents = "Frame Not Selected:\t\t\t\t\t\t\t\t\t\t$\n";
         }
 
         //if checked, add to receipt and add price to totalPrice
         if (uvBlockingChecked){
-            uvPrice = 49.9;
+            uvPrice = 49.99;
             totalPrice += uvPrice;
-            cartContents += "-UV Blocking treatment:\t\t\t\t\t\t\t$" + uvPrice + "\n";
+            cartContents += "-UV Blocking treatment:\t\t\t\t\t\t\t$" + df2.format(uvPrice) + "\n";
         }
         if (antiReflectingChecked){
             reflectPrice = 30;
             totalPrice += reflectPrice;
-            cartContents += "-Anti-Reflective coating:\t\t\t\t\t\t\t$" + reflectPrice + "\n";
+            cartContents += "-Anti-Reflective coating:\t\t\t\t\t\t\t$" + df2.format(reflectPrice) + "\n";
         }
         if (antiScratchChecked){
             scratchPrice = 35;
             totalPrice += scratchPrice;
-            cartContents += "-Anti-Scratch coating:\t\t\t\t\t\t\t\t\t$" + scratchPrice + "\n";
+            cartContents += "-Anti-Scratch coating:\t\t\t\t\t\t\t\t\t$" + df2.format(scratchPrice) + "\n";
         }
         if (polycarbonateChecked){
             polyPrice = 50;
             totalPrice += polyPrice;
-            cartContents += "-Polycarbonate Lenses:\t\t\t\t\t\t\t\t$" + polyPrice + "\n";
+            cartContents += "-Polycarbonate Lenses:\t\t\t\t\t\t\t\t$" + df2.format(polyPrice) + "\n";
         }
         if (photoChromicChecked){
-            photoPrice = 49.9;
+            photoPrice = 39.99;
             totalPrice += photoPrice;
-            cartContents += "-Photochromic treatment:\t\t\t\t\t\t$" + photoPrice + "\n";
+            cartContents += "-Photochromic treatment:\t\t\t\t\t\t$" + df2.format(photoPrice) + "\n";
         }
 
         receipt.setText(cartContents);
 
         //final price
-        String totalString = "Shipping:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t$" + shipPrice + "\n"
-                + "Total:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t$" + totalPrice + "\n";
+        String totalString = "Shipping:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t$" + df2.format(shipPrice) + "\n"
+                + "Total:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t$" + df2.format(totalPrice) + "\n";
         TextView totalView = findViewById(R.id.textView5);
         totalView.setText(totalString);
 
