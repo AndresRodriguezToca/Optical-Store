@@ -3,7 +3,9 @@ package com.example.farm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,6 +16,12 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    private SharedPreferences sharedPreferences;
+    //Radio Buttons
+    private RadioButton brown;
+    private RadioButton red;
+    private RadioButton black;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+        brown = findViewById(R.id.radButtonBrown);
+        red = findViewById(R.id.radButtonRed);
+        black = findViewById(R.id.radButtonBlack);
+        //Load Radio Button Clicked Last Before App Closed
+        loadMethod();
         // Button on Click
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,10 +63,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Your prescription glasses are empty.", Toast.LENGTH_LONG).show();
                     return;
                 }
-                    //Radio Buttons
-                RadioButton brown = findViewById(R.id.radButtonBrown);
-                RadioButton red = findViewById(R.id.radButtonRed);
-                RadioButton black = findViewById(R.id.radButtonBlack);
+
+
                         //Get Values and validate selection
                 if(brown.isChecked()){
                     userColorGlasses = "Brown";
@@ -65,7 +76,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "You haven't select any color for your frames!", Toast.LENGTH_LONG).show();
                     return;
                 }
-
+                    //Save Radio Button Clicked
+                    saveMethod();
                     //Get Value Spinner
                 String elementSpinner = spinner.getSelectedItem().toString();
 
@@ -97,5 +109,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startActivity);
             }
         });
+    }
+
+    public void saveMethod(){
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("brChecked", brown.isChecked());
+        editor.putBoolean("redChecked", red.isChecked());
+        editor.putBoolean("blChecked", black.isChecked());
+        editor.apply();
+    }
+
+    public void loadMethod(){
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        brown.setChecked(sharedPreferences.getBoolean("brChecked", false));
+        red.setChecked(sharedPreferences.getBoolean("redChecked", false));
+        black.setChecked(sharedPreferences.getBoolean("blChecked", false));
     }
 }
