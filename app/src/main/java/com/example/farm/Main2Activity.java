@@ -60,6 +60,7 @@ public class Main2Activity extends AppCompatActivity {
                 Intent startActivity = new Intent(Main2Activity.this, Main3Activity.class);
                 double priceGlasses = 150;
                 String imageSelected = "ImageBlack1";
+                startActivity.putExtra("Image", imageSelected);
                 startActivity.putExtra("PriceGlasses", priceGlasses);
                 startActivity.putExtra("UVBlocking", uvBlockingChecked);
                 startActivity.putExtra("AntiScratch", antiScratchChecked);
@@ -75,6 +76,7 @@ public class Main2Activity extends AppCompatActivity {
                 Intent startActivity = new Intent(Main2Activity.this, Main3Activity.class);
                 double priceGlasses = 230;
                 String imageSelected = "ImageBlack2";
+                startActivity.putExtra("Image", imageSelected);
                 startActivity.putExtra("PriceGlasses", priceGlasses);
                 startActivity.putExtra("UVBlocking", uvBlockingChecked);
                 startActivity.putExtra("AntiScratch", antiScratchChecked);
@@ -90,6 +92,7 @@ public class Main2Activity extends AppCompatActivity {
                 Intent startActivity = new Intent(Main2Activity.this, Main3Activity.class);
                 double priceGlasses = 189;
                 String imageSelected = "ImageBlack3";
+                startActivity.putExtra("Image", imageSelected);
                 startActivity.putExtra("PriceGlasses", priceGlasses);
                 startActivity.putExtra("UVBlocking", uvBlockingChecked);
                 startActivity.putExtra("AntiScratch", antiScratchChecked);
@@ -107,6 +110,7 @@ public class Main2Activity extends AppCompatActivity {
                 Intent startActivity = new Intent(Main2Activity.this, Main3Activity.class);
                 double priceGlasses = 150;
                 String imageSelected = "ImageRed1";
+                startActivity.putExtra("Image", imageSelected);
                 startActivity.putExtra("PriceGlasses", priceGlasses);
                 startActivity.putExtra("UVBlocking", uvBlockingChecked);
                 startActivity.putExtra("AntiScratch", antiScratchChecked);
@@ -122,6 +126,7 @@ public class Main2Activity extends AppCompatActivity {
                 Intent startActivity = new Intent(Main2Activity.this, Main3Activity.class);
                 double priceGlasses = 230;
                 String imageSelected = "ImageRed2";
+                startActivity.putExtra("Image", imageSelected);
                 startActivity.putExtra("PriceGlasses", priceGlasses);
                 startActivity.putExtra("UVBlocking", uvBlockingChecked);
                 startActivity.putExtra("AntiScratch", antiScratchChecked);
@@ -137,6 +142,7 @@ public class Main2Activity extends AppCompatActivity {
                 Intent startActivity = new Intent(Main2Activity.this, Main3Activity.class);
                 double priceGlasses = 189;
                 String imageSelected = "ImageRed3";
+                startActivity.putExtra("Image", imageSelected);
                 startActivity.putExtra("PriceGlasses", priceGlasses);
                 startActivity.putExtra("UVBlocking", uvBlockingChecked);
                 startActivity.putExtra("AntiScratch", antiScratchChecked);
@@ -154,6 +160,7 @@ public class Main2Activity extends AppCompatActivity {
                 Intent startActivity = new Intent(Main2Activity.this, Main3Activity.class);
                 double priceGlasses = 150;
                 String imageSelected = "ImageBrown1";
+                startActivity.putExtra("Image", imageSelected);
                 startActivity.putExtra("PriceGlasses", priceGlasses);
                 startActivity.putExtra("UVBlocking", uvBlockingChecked);
                 startActivity.putExtra("AntiScratch", antiScratchChecked);
@@ -169,6 +176,7 @@ public class Main2Activity extends AppCompatActivity {
                 Intent startActivity = new Intent(Main2Activity.this, Main3Activity.class);
                 double priceGlasses = 230;
                 String imageSelected = "ImageBrown2";
+                startActivity.putExtra("Image", imageSelected);
                 startActivity.putExtra("PriceGlasses", priceGlasses);
                 startActivity.putExtra("UVBlocking", uvBlockingChecked);
                 startActivity.putExtra("AntiScratch", antiScratchChecked);
@@ -184,6 +192,7 @@ public class Main2Activity extends AppCompatActivity {
                 Intent startActivity = new Intent(Main2Activity.this, Main3Activity.class);
                 double priceGlasses = 189;
                 String imageSelected = "ImageBrown3";
+                startActivity.putExtra("Image", imageSelected);
                 startActivity.putExtra("PriceGlasses", priceGlasses);
                 startActivity.putExtra("UVBlocking", uvBlockingChecked);
                 startActivity.putExtra("AntiScratch", antiScratchChecked);
